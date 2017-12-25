@@ -62,6 +62,7 @@ export default {
 
   span.story-rank {
     margin-right: 5px;
+    color: #ff4500;
   }
 
   span.story-rank:before {
