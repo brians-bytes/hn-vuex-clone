@@ -1,7 +1,7 @@
 <template lang="pug">
   .hello
     h1 {{ msg }}
-    div(v-for="story in topStories", v-html="story.rank + ': '+ story.id")
+    div(v-for="story in topStories", v-html="story.id")
 </template>
 
 <script>

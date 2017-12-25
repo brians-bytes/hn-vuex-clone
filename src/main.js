@@ -7,7 +7,7 @@ import App from './App';
 import router from './router';
 import { db } from './firebase';
 
-Vue.use(VueFire)
+Vue.use(VueFire);
 
 new Vue({
   el: '#app',
