@@ -1,14 +1,22 @@
 <template lang="pug">
   .hello
     h1 {{ msg }}
-    div(v-for="story in topStories", v-html="story.id")
+    story-item(
+      v-for="(story, index) in topStories"
+      :story="story"
+      :key="index"
+    )
 </template>
 
 <script>
-import { db } from "../firebase";
+import { db } from "@/firebase";
+import StoryItem from '@/components/StoryItem';
 
 export default {
   name: 'top-stories',
+  components: {
+    StoryItem,
+  },
   data() {
     return {
       msg: 'Top Stories',
