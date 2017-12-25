@@ -35,7 +35,7 @@ export default {
   },
   firebase: {
     topStoriesRaw: {
-      source: db.ref('v0/topstories').limitToFirst(25)
+      source: db.ref('v0/topstories').limitToFirst(15)
     },
   }
 };
