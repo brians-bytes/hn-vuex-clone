@@ -1,8 +1,14 @@
 <template lang="pug">
-  div.story
-    span.story-rank(v-html="storyRank")
-    span(v-html="storyTitle")
-    span.story-hostname(v-html="storyHostName")
+  .story
+    div
+      span.story-rank(v-html="storyRank")
+      span(v-html="storyTitle")
+      span.story-hostname(v-html="storyHostName")
+    div.sub-heading
+      span(v-html="storyPoints+ ' points by '+ storyBy")
+      timeago.story-time(:since="storyTimeMilliseconds")
+      span |
+      span(v-html="storyComments + ' comments'")
 
 </template>
 
@@ -42,9 +48,23 @@ export default {
       return this.storyData.url;
     },
     storyHostName() {
-      let matches = this.storyUrl.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
+      let storyUrl = this.storyUrl;
+      if (!storyUrl) return null;
+      let matches = storyUrl.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
       return matches && matches[1];
-    }
+    },
+    storyPoints() {
+      return this.storyData.score;
+    },
+    storyBy() {
+      return this.storyData.by;
+    },
+    storyTimeMilliseconds() {
+      return parseInt(this.storyData.time) * 1000;
+    },
+    storyComments() {
+      return this.storyData.descendants;
+    },
   },
   firebase: {
     storyRaw: {
@@ -80,6 +100,16 @@ export default {
 
   span.story-hostname::after {
     content: ")" ;
+  }
+
+  .sub-heading {
+    margin-left: 20px;
+  }
+
+  .sub-heading > span, .story-time {
+    padding-right: 5px;
+    opacity: 0.8;
+    font-size: 11px;
   }
 </style>
 
