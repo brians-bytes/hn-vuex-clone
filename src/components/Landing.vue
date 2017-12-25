@@ -4,15 +4,19 @@
 </template>
 
 <script>
+import { db } from "../firebase";
+
 export default {
   name: 'Landing',
-  data () {
+  data() {
     return {
       msg: 'Landing Page'
-    }
+    };
+  },
+  firebase: {
+    topStories: {
+      source: db.ref('v0/topstories')
+    },
   }
-}
+};
 </script>
-
-<style scoped>
-</style>
