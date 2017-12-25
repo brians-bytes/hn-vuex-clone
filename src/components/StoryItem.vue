@@ -2,7 +2,7 @@
   .story
     div
       span.story-rank(v-html="storyRank")
-      span(v-html="storyTitle")
+      span.story-title(v-html="storyTitle")
       span.story-hostname(v-html="storyHostName")
     div.sub-heading
       span(v-html="storyPoints+ ' points by '+ storyBy")
@@ -78,6 +78,10 @@ export default {
   div.story {
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+
+  span.story-title {
+    font-size: 18px;
   }
 
   span.story-rank {
