@@ -1,12 +1,19 @@
 <template lang="pug">
   .story
     div
-      span.story-rank(v-html="storyRank")
-      span.story-title(v-html="storyTitle")
-      span.story-hostname(v-html="storyHostName")
+      span.story-rank(
+        v-if="storyRank"
+        v-html="storyRank")
+      span.story-title(
+        v-html="storyTitle")
+      span.story-hostname(
+        v-if="storyHostName !== null"
+        v-html="'('+ storyHostName+')'")
     div.sub-heading
-      span(v-html="storyPoints+ ' points by '+ storyBy")
-      timeago.story-time(:since="storyTimeMilliseconds")
+      span(
+        v-html="storyPoints+ ' points by '+ storyBy")
+      timeago.story-time(
+        :since="storyTimeMilliseconds")
       span |
       span.story-comments(
         v-html="storyComments + ' comments'"
@@ -20,10 +27,14 @@ import { db } from '@/firebase';
 export default {
   name: 'story-item',
   props: {
-    story: {
-      type: Object,
+    storyId: {
+      type: Number,
       required: true,
-    }
+    },
+    storyRank: {
+      type: Number,
+      required: false,
+    },
   },
   data() {
     return {
@@ -37,12 +48,6 @@ export default {
     });
   },
   computed: {
-    storyId() {
-      return this.story.id;
-    },
-    storyRank() {
-      return this.story.rank;
-    },
     storyTitle() {
       return this.storyData.title;
     },
@@ -111,14 +116,6 @@ export default {
   span.story-hostname {
     opacity: 0.5;
     padding-left: 5px;
-  }
-
-  span.story-hostname::before {
-   content: "(" ;
-  }
-
-  span.story-hostname::after {
-    content: ")" ;
   }
 
   span.story-comments {

@@ -3,7 +3,8 @@
     h1 {{ msg }}
     story(
       v-for="(story, index) in topStories"
-      :story="story"
+      :story-id="story.id"
+      :story-rank="story.rank"
       :key="index"
     )
 </template>
