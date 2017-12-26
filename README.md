@@ -1,6 +1,6 @@
-# vuex-datastore-clone
+# vuex-hn-clone
 
-> Google Datastore viewer clone using vue and Vuex
+> hacker news clone using vue and Vuex
 
 ## Build Setup
 
@@ -18,4 +18,6 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# inspiration
+![source image](./images/inspiration.png)
+
