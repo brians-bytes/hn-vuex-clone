@@ -65,6 +65,9 @@ export default {
     storyComments() {
       return this.storyData.descendants;
     },
+    storyChildren() {
+      return this.storyData.kids;
+    },
   },
   firebase: {
     storyRaw: {

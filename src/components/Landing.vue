@@ -1,7 +1,7 @@
 <template lang="pug">
   .hello
     h1 {{ msg }}
-    story-item(
+    story(
       v-for="(story, index) in topStories"
       :story="story"
       :key="index"
@@ -10,12 +10,12 @@
 
 <script>
 import { db } from "@/firebase";
-import StoryItem from '@/components/StoryItem';
+import Story from '@/components/Story';
 
 export default {
   name: 'top-stories',
   components: {
-    StoryItem,
+    Story,
   },
   data() {
     return {
@@ -35,7 +35,7 @@ export default {
   },
   firebase: {
     topStoriesRaw: {
-      source: db.ref('v0/topstories').limitToFirst(50)
+      source: db.ref('v0/topstories').limitToFirst(25)
     },
   }
 };

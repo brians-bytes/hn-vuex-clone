@@ -8,8 +8,9 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Landing',
+      name: 'to-stories',
       component: Landing,
+      alias: '/top-stories',
     }
   ]
 })
