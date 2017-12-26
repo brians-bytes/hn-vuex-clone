@@ -28,7 +28,7 @@ export default {
   name: 'story-item',
   props: {
     storyId: {
-      type: Number,
+      type: String,
       required: true,
     },
     storyRank: {
