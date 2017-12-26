@@ -8,7 +8,9 @@
       span(v-html="storyPoints+ ' points by '+ storyBy")
       timeago.story-time(:since="storyTimeMilliseconds")
       span |
-      span(v-html="storyComments + ' comments'")
+      span.story-comments(
+        v-html="storyComments + ' comments'"
+        @click.prevent="openStory")
 
 </template>
 
@@ -69,6 +71,16 @@ export default {
       return this.storyData.kids;
     },
   },
+  methods: {
+    openStory() {
+      this.$router.push({
+        name: 'story-item',
+        params: {
+          id: this.storyId
+        },
+      });
+    },
+  },
   firebase: {
     storyRaw: {
       source: db.ref('v0/item/'),
@@ -107,6 +119,10 @@ export default {
 
   span.story-hostname::after {
     content: ")" ;
+  }
+
+  span.story-comments {
+    cursor: pointer;
   }
 
   .sub-heading {
