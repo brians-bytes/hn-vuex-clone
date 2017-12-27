@@ -115,6 +115,8 @@ export default {
     font-size: 22px;
     text-align: right;
     font-weight: 400;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   div.story-details {
