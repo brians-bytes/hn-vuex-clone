@@ -1,6 +1,5 @@
 <template lang="pug">
   .hello
-    h1 {{ msg }}
     story(
       v-for="(story, index) in topStories"
       :story-id="story.id"
@@ -20,7 +19,6 @@ export default {
   },
   data() {
     return {
-      msg: 'Top Stories',
       topStoriesRaw: [],
     };
   },
