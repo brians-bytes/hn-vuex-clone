@@ -4,7 +4,7 @@
       nav.inner
         .nav-wrapper
           a.left.brand-logo HN
-          ul.left.hide-on-med-and-down
+          ul.nav-links.left.hide-on-med-and-down
             router-link(
               active-class="active"
               to="top-stories"
@@ -48,6 +48,10 @@ export default {
 
   nav ul li {
     padding: 0 15px;
+  }
+
+  nav ul.nav-links {
+    padding: 0 10px;
   }
 
   .nav-wrapper .brand-logo {

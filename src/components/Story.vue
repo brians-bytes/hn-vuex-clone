@@ -9,13 +9,13 @@
       span.story-hostname(
         v-if="storyHostName !== null"
         v-html="'('+ storyHostName+')'")
-    div.sub-heading
-      span(
+      br
+      span.meta(
         v-html="storyPoints+ ' points by '+ storyBy")
       timeago.story-time(
         :since="storyTimeMilliseconds")
-      span |
-      span.story-comments(
+      span.meta |
+      span.meta.story-comments(
         v-html="storyComments + ' comments'"
         @click.prevent="openStory")
 
@@ -122,11 +122,7 @@ export default {
     cursor: pointer;
   }
 
-  .sub-heading {
-    margin-left: 20px;
-  }
-
-  .sub-heading > span, .story-time {
+  span.meta, .story-time {
     padding-right: 5px;
     opacity: 0.8;
     font-size: 11px;
