@@ -1,5 +1,5 @@
 <template lang="pug">
-  .hello
+  div.content
     story(
       v-for="(story, index) in topStories"
       :story-id="story.id"

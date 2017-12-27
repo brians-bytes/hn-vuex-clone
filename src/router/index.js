@@ -15,6 +15,11 @@ export default new Router({
       alias: '/top-stories',
     },
     {
+      path: '/new-stories',
+      name: 'new-stories',
+      component: Landing,
+    },
+    {
       path: '/story/:id',
       name: 'story-item',
       component: StoryItem,

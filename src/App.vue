@@ -5,14 +5,22 @@
         .nav-wrapper
           a.left.brand-logo HN
           ul.left.hide-on-med-and-down
-            li
-              a Top
-            li
-              a New
-            li
-              a Show
-            li
-              a Ask
+            router-link(
+              active-class="active"
+              to="top-stories"
+              tag="li") Top
+            router-link(
+              active-class="active"
+              to="new-stories"
+              tag="li") New
+            router-link(
+              active-class="active"
+              to="new-stories"
+              tag="li") Show
+            router-link(
+              active-class="active"
+              to="new-stories"
+              tag="li") Ask
     #app
       router-view
 </template>
@@ -29,13 +37,17 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    margin-top: 60px;
+    margin-top: 10px;
     margin-left: 50px;
     margin-right: 50px;
   }
 
   nav.inner {
     padding: 0 50px;
+  }
+
+  nav ul li {
+    padding: 0 15px;
   }
 
   .nav-wrapper .brand-logo {
