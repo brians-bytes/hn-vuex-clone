@@ -4,7 +4,9 @@
       v-if="storyRank"
       v-html="storyRank")
     .story-details
-      span.story-title(
+      a.story-title(
+        target="_blank"
+        :href="storyUrl"
         v-html="storyTitle")
       span.story-hostname(
         v-if="storyHostName !== null"
@@ -103,8 +105,9 @@ export default {
     border-bottom: 1px solid #eee;
   }
 
-  span.story-title {
+  a.story-title {
     font-size: 18px;
+    color: #2c3e50;
   }
 
   span.story-rank {

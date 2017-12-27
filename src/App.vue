@@ -45,6 +45,10 @@ export default {
     background: #ffffff;
   }
 
+  nav {
+    background-color: #f60;
+  }
+
   nav.inner {
     padding: 0 50px;
   }
