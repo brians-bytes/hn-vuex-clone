@@ -10,7 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'to-stories',
+      name: 'top-stories',
       component: Landing,
       alias: '/top-stories',
     },
