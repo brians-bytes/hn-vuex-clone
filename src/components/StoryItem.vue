@@ -1,10 +1,9 @@
 <template lang="pug">
-  div
+  div.content
     story(
       :story-id="storyId"
     )
     div
-      hr
       span.comments-header comments
       comment(
         v-for="(commentId, index) in storyCommentsIds"

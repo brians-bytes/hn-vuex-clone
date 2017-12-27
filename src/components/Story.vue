@@ -1,9 +1,9 @@
 <template lang="pug">
   .story
-    div
-      span.story-rank(
-        v-if="storyRank"
-        v-html="storyRank")
+    span.story-rank(
+      v-if="storyRank"
+      v-html="storyRank")
+    .story-details
       span.story-title(
         v-html="storyTitle")
       span.story-hostname(
@@ -98,6 +98,9 @@ export default {
   div.story {
     margin-top: 5px;
     margin-bottom: 5px;
+    position: relative;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
   }
 
   span.story-title {
@@ -107,6 +110,16 @@ export default {
   span.story-rank {
     margin-right: 5px;
     color: #ff4500;
+    position: absolute;
+    width: 35px;
+    font-size: 22px;
+    text-align: right;
+    font-weight: 400;
+  }
+
+  div.story-details {
+    position: relative;
+    left: 45px;
   }
 
   span.story-rank:before {

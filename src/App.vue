@@ -40,6 +40,9 @@ export default {
     margin-top: 10px;
     margin-left: 50px;
     margin-right: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
   }
 
   nav.inner {
@@ -56,5 +59,10 @@ export default {
 
   .nav-wrapper .brand-logo {
     position: relative;
+  }
+
+  .content {
+    margin-top: 25px;
+    padding: 0 10px;
   }
 </style>
