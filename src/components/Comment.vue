@@ -1,5 +1,6 @@
 <template lang="pug">
   .comment
+    hr
     div.author
       span.hn-user(v-html="commentBy")
       timeago.age(
@@ -53,12 +54,12 @@
     span.hn-user {
       padding-left: 5px;
       padding-right: 5px;
-      font-size: 8pt;
+      font-size: 9pt;
       opacity: 0.8;
     }
 
     .age {
-      font-size: 8pt;
+      font-size: 9pt;
     }
 
     span.comment-text {
@@ -66,8 +67,12 @@
     }
 
     div.text {
-      margin-inline-start: 30px;
-      margin-inline-end: 30px;
+      margin-inline-start: 5px;
+      margin-inline-end: 5px;
+    }
+
+    hr {
+      opacity: 0.3;
     }
 </style>
 
